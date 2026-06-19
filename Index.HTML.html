@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    
+</body>
+</<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alimentación Sana y Vida Activa</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f0f3f4;
+    color:#333;
+}
+
+header{
+    background:#28b463;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+nav{
+    background:#1d8348;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+section{
+    background:white;
+    margin:20px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+}
+
+h2{
+    color:#28b463;
+}
+
+p{
+    line-height:1.8;
+}
+
+video{
+    width:100%;
+    max-width:750px;
+    border-radius:10px;
+}
+
+audio{
+    width:100%;
+}
+
+.galeria{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.galeria img{
+    width:300px;
+    height:220px;
+    object-fit:cover;
+    margin:10px;
+    border-radius:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table, th, td{
+    border:1px solid black;
+}
+
+th{
+    background:#28b463;
+    color:white;
+    padding:10px;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+}
+
+footer{
+    background:#1d8348;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+ul{
+    line-height:2;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Alimentación Sana y Vida Activa</h1>
+
+<p>
+Proyecto Multimedia HTML5
+</p>
+
+</header>
+
+<nav>
+
+<a href="#inicio">Inicio</a>
+<a href="#beneficios">Beneficios</a>
+<a href="#video">Videos</a>
+<a href="#audio">Audios</a>
+<a href="#tabla">Tabla</a>
+<a href="#imagenes">Imágenes</a>
+
+</nav>
+
+<section id="inicio">
+
+<h2>¿Qué es una alimentación saludable?</h2>
+
+<p>
+Una alimentación saludable consiste en consumir alimentos variados que aporten nutrientes necesarios para mantener el cuerpo sano y con energía.
+</p>
+
+<p>
+Los hábitos saludables ayudan a prevenir enfermedades y mejoran la calidad de vida.
+</p>
+
+</section>
+
+<section id="beneficios">
+
+<h2>Beneficios de los Hábitos Saludables</h2>
+
+<ul>
+
+<li>Mayor energía y concentración.</li>
+
+<li>Mejor estado físico.</li>
+
+<li>Prevención de enfermedades.</li>
+
+<li>Fortalecimiento del sistema inmunológico.</li>
+
+<li>Mejor descanso y sueño.</li>
+
+<li>Mejor rendimiento escolar y deportivo.</li>
+
+</ul>
+
+</section>
+
+<section id="video">
+
+<h2>Video sobre Comida Saludable</h2>
+
+<p>
+Este video muestra ingredientes naturales y preparación de alimentos saludables.
+</p>
+
+<!-- VIDEO PRINCIPAL -->
+<video controls poster="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop">
+
+<source src="https://cdn.coverr.co/videos/coverr-washing-vegetables-1575461148805?download=1080p" type="video/mp4">
+
+<track
+src="subtitulos.vtt"
+kind="subtitles"
+srclang="es"
+label="Español"
+default>
+
+Tu navegador no soporta videos HTML5.
+
+</video>
+
+<br><br>
+
+<h3>Video automático sobre preparación de ensalada</h3>
+
+<!-- VIDEO AUTOMÁTICO -->
+<video autoplay muted loop controls>
+
+<source src="https://cdn.coverr.co/videos/coverr-healthy-food-on-the-table-1575461130678?download=1080p" type="video/mp4">
+
+</video>
+
+<br><br>
+
+<h3>Video iniciando desde el segundo 12</h3>
+
+<!-- VIDEO DESDE SEGUNDO -->
+<video controls>
+
+<source src="https://cdn.coverr.co/videos/coverr-washing-vegetables-1575461148805?download=1080p#t=12" type="video/mp4">
+
+</video>
+
+</section>
+
+<section id="audio">
+
+<h2>Audio Informativo sobre Nutrición</h2>
+
+<p>
+Escucha este audio educativo acerca de la importancia de comer saludable.
+</p>
+
+<!-- AUDIO 1 -->
+<audio controls preload="none">
+
+<source src="https://archive.org/download/healthy-food-tips-audio/healthy-food-tips.mp3" type="audio/mpeg">
+
+Tu navegador no soporta audio HTML5.
+
+</audio>
+
+<br><br>
+
+<h3>Audio automático y repetitivo</h3>
+
+<!-- AUDIO 2 -->
+<audio autoplay controls loop>
+
+<source src="https://archive.org/download/healthy-life-style-audio/healthy-life-style.mp3" type="audio/mpeg">
+
+</audio>
+
+</section>
+
+<section id="tabla">
+
+<h2>Compatibilidad de Multimedia</h2>
+
+<table>
+
+<tr>
+<th>Navegador</th>
+<th>MP4</th>
+<th>WEBM</th>
+<th>OGG VIDEO</th>
+<th>MP3</th>
+<th>OGG AUDIO</th>
+</tr>
+
+<tr>
+<td>Google Chrome</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>Mozilla Firefox</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>Microsoft Edge</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>Safari</td>
+<td>✔</td>
+<td>✖</td>
+<td>✖</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+
+<tr>
+<td>Opera</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="imagenes">
+
+<h2>Galería de Hábitos Saludables</h2>
+
+<div class="galeria">
+
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop" alt="Frutas saludables">
+
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop" alt="Ensalada">
+
+<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop" alt="Comida saludable">
+
+<img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1200&auto=format&fit=crop" alt="Verduras frescas">
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Consejos para una Vida Sana</h2>
+
+<ul>
+
+<li>Consumir frutas diariamente.</li>
+
+<li>Tomar suficiente agua.</li>
+
+<li>Reducir el azúcar.</li>
+
+<li>Evitar comida chatarra.</li>
+
+<li>Realizar ejercicio físico.</li>
+
+<li>Dormir correctamente.</li>
+
+</ul>
+
+</section>
+
+<footer>
+
+<p>
+Práctica Multimedia HTML5 | Alimentación Sana y Vida Activa
+</p>
+
+</footer>
+
+</body>
+</html>

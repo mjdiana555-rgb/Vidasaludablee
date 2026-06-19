@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    
+</body>
+</DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 12 - Calculadora de IMC (Vida Saludable)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f9f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 450px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 0 auto;
+        }
+        h2 { color: #2e7d32; text-align: center; }
+        .campo { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button[type="submit"] { background-color: #4caf50; color: white; }
+        button[type="button"] { background-color: #e0e0e0; color: #333; float: right; }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .aviso { color: #666; font-size: 12px; italic; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Calculadora de IMC 🍏</h2>
+    <p class="aviso" id="notificacion">Esperando datos...</p>
+
+    <!-- FORMULARIO CON EL EVENTO 1: onsubmit -->
+    <form id="formularioIMC" onsubmit="calcularIMC(event)">
+        
+        <div class="campo">
+            <label for="nombre">Nombre Completo:</label>
+            <!-- EVENTO 2: oninput (Detecta cuando el usuario escribe en tiempo real) -->
+            <input type="text" id="nombre" placeholder="Ej. Tu nombre" required oninput="actualizarNotificacion()">
+        </div>
+
+        <div class="campo">
+            <label for="peso">Peso (en kg):</label>
+            <input type="number" id="peso" step="0.1" placeholder="Ej. 70.5" min="1" required>
+        </div>
+
+        <div class="campo">
+            <label for="estatura">Estatura (en metros):</label>
+            <input type="number" id="estatura" step="0.01" placeholder="Ej. 1.75" min="0.5" max="2.5" required>
+        </div>
+
+        <button type="submit">Calcular IMC</button>
+        
+        <!-- EVENTO 3: onclick (Para borrar y reiniciar el formulario) -->
+        <button type="button" id="btnLimpiar" onclick="limpiarFormulario()">Limpiar</button>
+    </form>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+    // EVENTO 1: Función que se ejecuta en el 'onsubmit' del formulario
+    function calcularIMC(event) {
+        event.preventDefault(); // Evita que la página se recargue
+
+        const nombre = document.getElementById("nombre").value;
+        const peso = parseFloat(document.getElementById("peso").value);
+        const estatura = parseFloat(document.getElementById("estatura").value);
+        const contenedorResultado = document.getElementById("resultado");
+
+        // Fórmula del IMC: Peso / (Estatura^2)
+        const imc = peso / (estatura * estatura);
+        let diagnostico = "";
+        let colorFondo = "";
+
+        if (imc < 18.5) {
+            diagnostico = "Bajo peso";
+            colorFondo = "#ffe082"; // Amarillo
+        } else if (imc >= 18.5 && imc < 24.9) {
+            diagnostico = "Peso saludable ¡Excelente!";
+            colorFondo = "#a5d6a7"; // Verde
+        } else if (imc >= 25 && imc < 29.9) {
+            diagnostico = "Sobrepeso";
+            colorFondo = "#ffcc80"; // Naranja
+        } else {
+            diagnostico = "Obesidad. Se recomienda consultar a un médico.";
+            colorFondo = "#ef9a9a"; // Rojo
+        }
+
+        // Mostrar resultado dinámico en la página
+        contenedorResultado.style.backgroundColor = colorFondo;
+        contenedorResultado.innerHTML = `¡Hola ${nombre}!<br>Tu IMC es: <strong>${imc.toFixed(2)}</strong><br>Estado: ${diagnostico}`;
+        
+        // Alerta externa interactiva (Notificación básica)
+        alert(`Cálculo finalizado para ${nombre}. Tu estado es: ${diagnostico}`);
+    }
+
+    // EVENTO 2: Función ejecutada por 'oninput'
+    function actualizarNotificacion() {
+        const nombre = document.getElementById("nombre").value;
+        const notificacion = document.getElementById("notificacion");
+        if (nombre.length > 0) {
+            notificacion.innerText = `Escribiendo: ${nombre}...`;
+        } else {
+            notificacion.innerText = "Esperando datos...";
+        }
+    }
+
+    // EVENTO 3: Función ejecutada por 'onclick'
+    function limpiarFormulario() {
+        document.getElementById("formularioIMC").reset();
+        document.getElementById("resultado").innerText = "";
+        document.getElementById("resultado").style.backgroundColor = "transparent";
+        document.getElementById("notificacion").innerText = "Formulario reiniciado.";
+    }
+</script>
+
+</body>
+</html>
